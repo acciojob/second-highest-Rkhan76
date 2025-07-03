@@ -9,8 +9,20 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
+			if(arr.length <= 0 || arr.length == 1) return -Infinity
+			if(arr.every(el => el === arr[0])) return -Infinity
 			
+			let highest = -Infinty
+			let secondHighest = -Infinity
+
+			for(let num of arr){
+				if(num > highest){
+					highest = num;
+					secondHighest = highest
+				}
+			}
+
+			return secondHighest
 		}
 
 		function Main() {
